@@ -1,0 +1,478 @@
+:root {
+    --dark: #191918;
+    --gray: #696871;
+    --purple: #5454d4;
+    --orange: #ff7143;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+/* KORREKTUR: Punkt entfernt, damit es für das ganze Dokument gilt */
+body {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    background: white;
+    z-index: 999;
+    top: 0;
+    padding-block: 30px;
+}
+
+.header__container, .hero__container {
+    max-width: 1069px;
+    margin-inline: auto;
+}
+
+.header__nav {
+    display: flex; 
+    justify-content: space-between;          
+    align-items: center; 
+}
+
+.header__nav-list {
+    display: flex; 
+    gap: 49px; 
+}
+
+ul {
+    list-style: none;
+}
+
+.header__list-link {
+    font-size: 15px; 
+    font-weight: 700;
+    letter-spacing: -0.47px;
+    color: var(--gray);
+    transition: color 0.3s;
+}
+
+.header__list-link.active {
+    color: var(--dark);
+    border-bottom: 2px solid var(--purple);
+    padding-bottom: 10px;
+}
+
+.header__list-link:hover {
+    color: var(--dark);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* KORREKTUR: .hero__buttons hier entfernt, da es der Container ist */
+.header__button, .hero__button {
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: -0.53px;
+    color: white;
+    padding: 19px 59px;
+    border-radius: 10px;
+    transition: opacity 0.3s;
+    display: inline-block; /* Sorgt für richtiges Padding bei Links */
+}
+
+.header__button {
+    background: var(--orange);
+}
+
+/* KORREKTUR: Hover-Effekt angepasst */
+.header__button:hover, .hero__button:hover {
+    opacity: 0.9;
+}
+
+main {
+    margin-top: 141px;
+}
+
+.hero {
+    padding-block: 70px;
+}
+
+.hero__container {
+    position: relative;
+}
+
+.hero__content {
+    max-width: 423px;
+    padding-block: 92px;
+}
+
+.hero__image {
+    position: absolute;
+    top: 0;
+    right: -75px;
+}
+
+.hero__title {
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: -2.5px;
+    line-height: 77px;
+    color: var(--dark); /* KORREKTUR: Tippfehler bei color behoben */
+}
+
+.hero__description {
+    font-family: 'Mulish', sans-serif;
+    font-size: 20px;
+    letter-spacing: -0.63px;
+    line-height: 30px;
+    color: var(--gray);
+    margin-top: 30px; /* KORREKTUR: max-top zu margin-top geändert */
+}
+
+/* KORREKTUR: Reiner Flex-Container für Button + Scroll-Icon */
+.hero__buttons {
+    margin-top: 50px;
+    display: flex;
+    gap: 40px;
+    align-items: center; /* Richtet Button und Kreis mittig aneinander aus */
+}
+
+.hero__button {
+    background: var(--purple);
+}
+
+.hero__scroll {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #e7e7e7;
+    border-radius: 100px;
+}
+.logos {
+   padding-block: 60px;
+}
+.logos__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1069px;
+    margin-inline: auto;
+}
+
+.logos__item img {
+    display: block;
+    max-height: 40px;
+    width:auto;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}       
+
+.logos__item img:hover {
+    opacity: 1;
+}
+.subscribtion {
+    padding-block: 100px; /* Abstand nach oben und unten zur Logo-Sektion */
+}
+
+.subscribtion__container {
+    max-width: 1069px;
+    margin-inline: auto;
+    display: flex;          /* Bringt Bild und Text nebeneinander */
+    align-items: center;    /* Richtet beide Elemente vertikal mittig zueinander aus */
+    gap: 80px;              /* Abstand zwischen Bild und Text */
+}
+
+.subscribtion__image-wrapper {
+    flex: 1;                /* Nimmt die linke Hälfte ein */
+}
+
+.subscribtion__image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.subscribtion__content {
+    flex: 1;                /* Nimmt die rechte Hälfte ein */
+    max-width: 480px;       /* Verhindert, dass der Text zu breit läuft */
+}
+
+.subscribtion__title {
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    color: var(--dark);
+    margin-bottom: 30px;    /* Abstand zum Fließtext */
+}
+
+.subscribtion__description {
+    font-family: 'Mulish', sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--gray);
+    margin-bottom: 30px;    /* Abstand zum Learn More Link */
+}
+
+.subscribtion__link {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--purple);   /* Nutzt dein definiertes Violett */
+    transition: opacity 0.3s;
+}
+
+.subscribtion__link:hover {
+    opacity: 0.8;
+}
+
+.metrics {
+    padding-block: 100px; /* Gleicher Abstand wie bei der Sektion darüber */
+}
+
+.metrics__container {
+    max-width: 1069px;
+    margin-inline: auto;
+    display: flex;          /* Bringt Text und Bild sauber nebeneinander */
+    align-items: center;    /* Richtet Text und Bild vertikal mittig aus */
+    gap: 80px;              /* Abstand zwischen Text und Bild */
+}
+
+.metrics__content {
+    flex: 1;                /* Nimmt die linke Hälfte ein */
+    max-width: 480px;       /* Hält die Textbreite kompakt wie im Design */
+}
+
+.metrics__title {
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    color: var(--dark);
+    margin-bottom: 30px;
+}
+
+.metrics__description {
+    font-family: 'Mulish', sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--gray);
+    margin-bottom: 30px;
+}
+
+.metrics__link {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--purple);   /* Nutzt dein violettes Farb-Variable */
+    transition: opacity 0.3s;
+}
+
+.metrics__link:hover {
+    opacity: 0.8;
+}
+
+.metrics__image-wrapper {
+    flex: 1;                /* Nimmt die rechte Hälfte ein */
+    display: flex;
+    justify-content: flex-end; /* Schiebt das Bild ganz nach rechts außen */
+}
+
+.metrics__image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.features {
+    padding-block: 100px;
+}
+
+.features__container {
+    max-width: 1069px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between; /* Verteilt die 3 Boxen gleichmäßig */
+    gap: 40px;                      /* Abstand zwischen den Boxen */
+}
+
+.features__item {
+    flex: 1;                        /* Alle 3 Boxen sind exakt gleich breit */
+    text-align: center;             /* Zentriert Text und Icons in der Box */
+    max-width: 310px;               /* Verhindert, dass der Text zu breit läuft */
+}
+
+.features__icon {
+    height: 80px;                   /* Feste Höhe für die Icon-Zentrierung */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.features__icon img {
+    max-height: 100%;
+    width: auto;
+}
+
+.features__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.features__description {
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--gray);
+}
+
+.pricing {
+    padding-block: 100px;
+}
+
+.pricing__container {
+    max-width: 1069px;
+    margin-inline: auto;
+}
+
+/* Flexbox für Überschrift und Umschalter nebeneinander */
+.pricing__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.pricing__main-title {
+    font-size: 60px;
+    font-weight: 700;
+    max-width: 550px;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    color: var(--dark);
+}
+
+/* Das graue Pillen-Gehäuse für den Schalter */
+.pricing__toggle {
+    background: #f2f2f5;
+    padding: 6px;
+    border-radius: 10px;
+    display: flex;
+}
+
+.pricing__toggle-btn {
+    border: none;
+    background: none;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--gray);
+}
+
+/* Der blau aktive Button im Schalter */
+.pricing__toggle-btn.active {
+    background: var(--purple);
+    color: white;
+}
+
+/* Das Raster für die 3 Karten */
+.pricing__grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Sorgt dafür, dass alle Karten gleich hoch sind */
+    gap: 30px;
+}
+
+/* Standard-Stil für die linke und rechte Karte */
+.pricing__card {
+    flex: 1;
+    background: #fdfdfd;
+    border: 1px solid #f1f1f3;
+    border-radius: 15px;
+    padding: 50px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Spezial-Stil für die mittlere, orangefarbene Karte */
+.pricing__card--featured {
+    background: var(--orange);
+    border: none;
+    transform: scale(1.03); /* Macht sie minimal größer wie im Design */
+    box-shadow: 0 20px 40px rgba(255, 113, 67, 0.15);
+}
+
+.pricing__plan-name {
+    font-size: 18px;
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+.pricing__card--featured .pricing__plan-name {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.pricing__price {
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    color: var(--dark);
+    margin-bottom: 30px;
+}
+
+.pricing__price span {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.pricing__card--featured .pricing__price {
+    color: white;
+}
+
+/* Liste der Features innerhalb der Karten */
+.pricing__features {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.pricing__features li {
+    font-family: 'Mulish', sans-serif;
+    font-size: 17px;
+    color: var(--gray);
+    margin-block: 15px;
+}
+
+.pricing__card--featured .pricing__features li {
+    color: white;
+}
+
+/* Buttons in den Karten */
+.pricing__card-btn {
+    width: 100%;
+    padding: 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 17px;
+    margin-top: auto; /* Schiebt den Button immer ganz nach unten */
+    text-decoration: none;
+}
+
+/* Weißer Button für die äußeren Karten */
+.pricing__card-btn.btn-light {
+    background: white;
+    color: var(--purple);
+    border: 1px solid #f1f1f3;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+/* Dunkler Button für die mittlere Karte */
+.pricing__card-btn.btn-dark {
+    background: #54423d; /* Dunkles Braun/Rot passend zum Design */
+    color: white;
+}
